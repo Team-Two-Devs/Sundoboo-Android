@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#6200ee</color>
+    <color name="colorPrimaryDark">#3700b3</color>
+    <color name="colorAccent">#03DAC6</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="error">#b00020</color>
+    <color name="surface">#ffffff</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorOnBackground">#000000</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="textHigh">#DE000000</color>
+    <color name="textMedium">#99000000</color>
+    <color name="textDisable">#61000000</color>
+
+    <color name="surfaceDp1">#ffffff</color>
+    <color name="surfaceDp2">#ffffff</color>
+    <color name="surfaceDp3">#ffffff</color>
+    <color name="surfaceDp4">#ffffff</color>
+    <color name="surfaceDp6">#ffffff</color>
+    <color name="surfaceDp8">#ffffff</color>
+    <color name="surfaceDp12">#ffffff</color>
+    <color name="surfaceDp16">#ffffff</color>
+    <color name="surfaceDp24">#ffffff </color>
 </resources>
