@@ -24,4 +24,9 @@
     <color name="surfaceDp12">#333333</color>
     <color name="surfaceDp16">#343434</color>
     <color name="surfaceDp24">#383838 </color>
+
+    <color name="colorDefaultBackground">#242424</color>
+    <color name="colorDefaultAppbarBackground">#242424</color>
+    <color name="color_feed_search_toolbar">#383838</color>
+
 </resources>

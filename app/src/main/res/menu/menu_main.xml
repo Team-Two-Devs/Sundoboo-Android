@@ -10,7 +10,7 @@
         android:title="@string/label_menu_item_feed"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/menu_item_seeting"
+        android:id="@+id/menu_item_setting"
         android:title="@string/label_menu_item_feed"
         app:showAsAction="ifRoom"/>
 </menu>
