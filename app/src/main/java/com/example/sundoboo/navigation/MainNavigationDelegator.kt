@@ -9,8 +9,4 @@ class MainNavigationDelegator(
     context: Context,
 ) : NavigationDelegator(navigationViewController, navigationFragments, context) {
 
-    override fun mapFragment(id: Int): Fragment {
-        return navigationFragments.getFragmentMatchesMenuId(id)
-    }
-
 }

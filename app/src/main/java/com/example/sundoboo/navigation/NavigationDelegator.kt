@@ -19,6 +19,14 @@ abstract class NavigationDelegator(
         navigationViewController.setItemSelectedListener(onItemSelectedListener)
     }
 
-    abstract fun mapFragment(id: Int) : Fragment
+    private fun mapFragment(id: Int): Fragment {
+        return navigationFragments.getFragmentMatchesMenuId(id)
+    }
 
+
+    //id에 맞는 fragment를 시작한다.
+    fun startWith(id: Int) {
+        navigationViewController.replace(mapFragment(id))
+    }
+    
 }

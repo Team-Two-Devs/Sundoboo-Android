@@ -40,5 +40,7 @@ class MainActivity : AppCompatActivity() {
             navigationViewController = navigationViewController,
             navigationFragments = navigationFragments
         )
+
+        navigationDelegator.startWith(R.id.menu_item_feed)
     }
 }
