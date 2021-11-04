@@ -6,12 +6,12 @@ import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainNavigationManager(
+class MainNavigationDelegator(
     displayView: FragmentContainerView,
     navigation: BottomNavigationView,
     fragmentManager: FragmentManager,
     context: Context,
-) : NavigationManager(displayView, navigation, fragmentManager, context) {
+) : NavigationDelegator(displayView, navigation, fragmentManager, context) {
 
     var fragmentSet = setOf<MappedFragment>()
 

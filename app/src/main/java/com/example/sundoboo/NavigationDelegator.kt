@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 
-abstract class NavigationManager(
+abstract class NavigationDelegator(
     private val displayView: FragmentContainerView,
     private val navigation: BottomNavigationView,
     private val fragmentManager: FragmentManager,
