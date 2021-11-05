@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationBarView
 
-abstract class NavigationDelegator(
+abstract class NavigationManager(
     private val navigationViewController: NavigationViewController,
     private val navigationFragments: NavigationFragments,
     private val context: Context,
