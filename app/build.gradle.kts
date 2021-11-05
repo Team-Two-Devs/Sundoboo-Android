@@ -48,6 +48,10 @@ dependencies {
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.CONSTRAINT_LAYOUT)
 
+    implementation(Dependencies.LIFECYCLE_LIVEDATA_KTX)
+    implementation(Dependencies.LIFECYCLE_COMMON)
+
+
     testImplementation(Dependencies.JUNIT)
 
     androidTestImplementation(Dependencies.EXT_JUNIT)

@@ -6,7 +6,7 @@ import com.google.android.material.navigation.NavigationBarView
 
 abstract class NavigationDelegator(
     private val navigationViewController: NavigationViewController,
-    protected val navigationFragments: NavigationFragments,
+    private val navigationFragments: NavigationFragments,
     private val context: Context,
 ) {
 
@@ -24,9 +24,9 @@ abstract class NavigationDelegator(
     }
 
 
-    //id에 맞는 fragment를 시작한다.
+    //id에 맞는 fragment로 시작한다.
     fun startWith(id: Int) {
         navigationViewController.replace(mapFragment(id))
     }
-    
+
 }
