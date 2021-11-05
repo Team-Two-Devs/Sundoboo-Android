@@ -6,14 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.sundoboo.R
+import com.example.sundoboo.databinding.FragmentFeedBinding
+import com.example.sundoboo.utils.autoCleared
 
 class FeedFragment : Fragment() {
+
+    private var binding by autoCleared<FragmentFeedBinding>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_feed, container, false)
+    ): View {
+        binding = FragmentFeedBinding.inflate(inflater)
+        return binding.root
     }
 
     companion object {
