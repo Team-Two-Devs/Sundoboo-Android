@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navigationManager: NavigationManager
 
     private val navigationFragments by lazy {
-        MainNavigationFragments()    }
+        MainNavigationFragments()
+    }
 
     private val navigationViewController by lazy {
         NavigationViewController(

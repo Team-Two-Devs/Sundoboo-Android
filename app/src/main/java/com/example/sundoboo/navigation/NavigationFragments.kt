@@ -4,11 +4,16 @@ import androidx.fragment.app.Fragment
 
 abstract class NavigationFragments {
 
-    protected abstract val fragments: Map<Int, NavigationFragment>
+    private val fragments: Map<Int, NavigationFragment> by lazy {
+        createFragmentsWithId()
+    }
 
     fun getFragmentMatchesMenuId(menuId: Int): Fragment {
-        return fragments[menuId]?.fragment ?: throw Exception("Fragment with menuId $menuId not found!")
+        return fragments[menuId]?.fragment
+            ?: throw Exception("Fragment with menuId $menuId not found!")
     }
+
+    abstract fun createFragmentsWithId(): Map<Int, NavigationFragment>
 
 }
 
