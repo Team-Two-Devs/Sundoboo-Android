@@ -17,7 +17,8 @@
             android:background="@color/colorDefaultAppbarBackground"
             android:paddingTop="16dp"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp">
+            android:paddingEnd="16dp"
+            android:clipToPadding="false">
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
@@ -51,65 +52,20 @@
                 app:tabPaddingBottom="5dp"
                 app:tabRippleColor="@android:color/transparent"
                 app:tabPaddingTop="5dp"
+                android:switchTextAppearance="@style/Caption"
                 app:tabTextColor="@color/textHigh">
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:switchTextAppearance="@style/Caption"
-                    android:text="전체" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:switchTextAppearance="@style/Caption"
-                    android:text="인관관계" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:switchTextAppearance="@style/Caption"
-                    android:text="연애/결혼" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:switchTextAppearance="@style/Caption"
-                    android:text="음식" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:switchTextAppearance="@style/Caption"
-                    android:text="영화" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:switchTextAppearance="@style/Caption"
-                    android:text="테스트" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:switchTextAppearance="@style/Caption"
-                    android:text="직업" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:switchTextAppearance="@style/Caption"
-                    android:text="전체" />
-
 
             </com.google.android.material.tabs.TabLayout>
 
-
             <View
+                android:id="@+id/view_divider_app_bar"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="-16dp"
+                android:layout_marginEnd="-16dp"
                 android:background="@color/surfaceDp24"/>
+
         </com.google.android.material.appbar.AppBarLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

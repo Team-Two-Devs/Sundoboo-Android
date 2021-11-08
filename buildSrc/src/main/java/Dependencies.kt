@@ -12,6 +12,12 @@ object Dependencies {
     const val LIFECYCLE_COMMON = "androidx.lifecycle:lifecycle-common-java8:2.4.0"
     const val LIFECYCLE_LIVEDATA_KTX = "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
 
+    //activity ktx
+    const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.4.0"
+
+    //fragment ktx
+    const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:1.4.0-beta01"
+
     //junit
     const val JUNIT = "junit:junit:4.+"
     const val EXT_JUNIT = "androidx.test.ext:junit:1.1.3"

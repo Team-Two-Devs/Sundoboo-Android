@@ -51,6 +51,8 @@ dependencies {
     implementation(Dependencies.LIFECYCLE_LIVEDATA_KTX)
     implementation(Dependencies.LIFECYCLE_COMMON)
 
+    implementation(Dependencies.ACTIVITY_KTX)
+    implementation(Dependencies.FRAGMENT_KTX)
 
     testImplementation(Dependencies.JUNIT)
 
