@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">선도부</string>
     <string name="hint_search_vote">투표 검색</string>
-    <string name="label_menu_item_feed">피드</string>
+    <string name="label_menu_item_home">홈</string>
 </resources>

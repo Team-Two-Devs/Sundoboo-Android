@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.sundoboo.R
-import com.example.sundoboo.databinding.FragmentFeedBinding
+import com.example.sundoboo.databinding.FragmentHomeBinding
 import com.example.sundoboo.utils.autoCleared
+import com.google.android.material.tabs.TabLayout
 
-class FeedFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private var binding by autoCleared<FragmentFeedBinding>()
+    private var binding by autoCleared<FragmentHomeBinding>()
 
     private val viewModel by viewModels<FeedViewModel>()
 
@@ -20,7 +20,9 @@ class FeedFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFeedBinding.inflate(inflater)
+        binding = FragmentHomeBinding.inflate(inflater).apply {
+            lifecycleOwner = this@HomeFragment.viewLifecycleOwner
+        }
         return binding.root
     }
 
@@ -38,7 +40,7 @@ class FeedFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = FeedFragment().apply {
+        fun newInstance() = HomeFragment().apply {
             arguments = Bundle().apply {
 
             }
