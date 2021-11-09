@@ -7,18 +7,18 @@
         android:id="@+id/layout_holder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:background="@color/colorDefaultBackground">
+        android:background="@color/colorDefaultBackground"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:elevation="0dp"
             android:background="@color/colorDefaultAppbarBackground"
-            android:paddingTop="16dp"
+            android:clipToPadding="false"
             android:paddingStart="16dp"
+            android:paddingTop="16dp"
             android:paddingEnd="16dp"
-            android:clipToPadding="false">
+            app:elevation="0dp">
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
@@ -47,13 +47,13 @@
                 android:clipToPadding="false"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
+                android:switchTextAppearance="@style/Caption"
                 app:tabIndicator="@drawable/background_feed_tab_indicator"
                 app:tabIndicatorGravity="stretch"
                 app:tabMode="scrollable"
                 app:tabPaddingBottom="5dp"
-                app:tabRippleColor="@android:color/transparent"
                 app:tabPaddingTop="5dp"
-                android:switchTextAppearance="@style/Caption"
+                app:tabRippleColor="@android:color/transparent"
                 app:tabTextColor="@color/textHigh">
 
             </com.google.android.material.tabs.TabLayout>
@@ -62,12 +62,19 @@
                 android:id="@+id/view_divider_app_bar"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="-16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="-16dp"
-                android:background="@color/surfaceDp24"/>
+                android:background="@color/surfaceDp24" />
 
         </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager_feed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorDefaultBackground"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

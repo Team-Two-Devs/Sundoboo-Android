@@ -1,7 +1,7 @@
 package com.example.sundoboo.main.navigation
 
 import com.example.sundoboo.R
-import com.example.sundoboo.feed.HomeFragment
+import com.example.sundoboo.home.HomeFragment
 import com.example.sundoboo.navigation.NavigationFragment
 import com.example.sundoboo.navigation.NavigationFragments
 
