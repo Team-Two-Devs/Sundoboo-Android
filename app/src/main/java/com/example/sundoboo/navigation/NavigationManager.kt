@@ -1,7 +1,6 @@
 package com.example.sundoboo.navigation
 
 import android.content.Context
-import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationBarView
 
 abstract class NavigationManager(
@@ -11,7 +10,7 @@ abstract class NavigationManager(
 ) {
 
     private val onItemSelectedListener = NavigationBarView.OnItemSelectedListener {
-        navigationViewController.replace(mapFragment(it.itemId))
+        replace(it.itemId)
         true
     }
 
@@ -19,14 +18,13 @@ abstract class NavigationManager(
         navigationViewController.setItemSelectedListener(onItemSelectedListener)
     }
 
-    private fun mapFragment(id: Int): Fragment {
-        return navigationFragments.getFragmentMatchesMenuId(id)
+    private fun replace(id: Int) {
+        navigationViewController.replace(navigationFragments.getFragmentMatchesMenuId(id))
     }
 
-
-    //id에 맞는 fragment로 시작한다.
-    fun startWith(id: Int) {
-        navigationViewController.replace(mapFragment(id))
+    //첫번째 fragment로 시작한다.
+    fun start(id: Int) {
+        replace(id)
     }
 
 }

@@ -8,8 +8,8 @@ abstract class NavigationFragments {
         createFragmentsWithId()
     }
 
-    fun getFragmentMatchesMenuId(menuId: Int): Fragment {
-        return fragments[menuId]?.fragment
+    fun getFragmentMatchesMenuId(menuId: Int): NavigationFragment {
+        return fragments[menuId]
             ?: throw Exception("Fragment with menuId $menuId not found!")
     }
 

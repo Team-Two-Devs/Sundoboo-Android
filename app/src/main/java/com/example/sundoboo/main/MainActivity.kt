@@ -42,6 +42,6 @@ class MainActivity : AppCompatActivity() {
             navigationFragments = navigationFragments
         )
 
-        navigationManager.startWith(R.id.menu_item_feed)
+        navigationManager.start(R.id.menu_item_home)
     }
 }

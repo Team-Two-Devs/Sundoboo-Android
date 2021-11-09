@@ -7,11 +7,11 @@ import com.example.sundoboo.navigation.NavigationFragments
 
 class MainNavigationFragments : NavigationFragments() {
 
-    private val feedFragment by lazy { HomeFragment.newInstance() }
+    private val homeFragment by lazy { HomeFragment.newInstance() }
 
     override fun createFragmentsWithId(): Map<Int, NavigationFragment> {
         return mutableMapOf(
-            R.id.menu_item_feed to NavigationFragment(feedFragment, false)
+            R.id.menu_item_home to NavigationFragment(homeFragment, false),
         )
     }
 
