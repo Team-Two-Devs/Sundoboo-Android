@@ -1,7 +1,6 @@
 package com.example.sundoboo.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.sundoboo.databinding.FragmentHomeBinding
 import com.example.sundoboo.utils.autoCleared
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {
 
@@ -16,9 +16,7 @@ class HomeFragment : Fragment() {
 
     private val viewModel by viewModels<HomeViewModel>()
 
-    private val feedFragmentAdapter by lazy {
-        FeedFragmentAdapter(this)
-    }
+    private lateinit var feedFragmentAdapter: FeedFragmentAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,12 +37,16 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUpViewPager() {
-
+        feedFragmentAdapter = FeedFragmentAdapter(this)
+        binding.viewPagerFeed.adapter = feedFragmentAdapter
     }
 
     private fun observeViewModel() {
-        viewModel.tabItems.observe(viewLifecycleOwner) { tabs ->
-
+        viewModel.categories.observe(viewLifecycleOwner) { tabs ->
+            TabLayoutMediator(binding.tabLayoutCategory, binding.viewPagerFeed) { tabLayout, position ->
+                tabLayout.text = tabs[position].name
+            }.attach()
+            feedFragmentAdapter.updateCategories(tabs)
         }
     }
 

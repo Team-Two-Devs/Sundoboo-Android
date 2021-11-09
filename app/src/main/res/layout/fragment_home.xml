@@ -15,14 +15,14 @@
             android:layout_height="wrap_content"
             android:background="@color/colorDefaultAppbarBackground"
             android:clipToPadding="false"
-            android:paddingStart="16dp"
             android:paddingTop="16dp"
-            android:paddingEnd="16dp"
             app:elevation="0dp">
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 app:contentInsetLeft="0dp"
                 app:contentInsetStart="0dp">
 
@@ -44,11 +44,13 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
+                android:clipChildren="false"
                 android:clipToPadding="false"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:switchTextAppearance="@style/Caption"
                 app:tabIndicator="@drawable/background_feed_tab_indicator"
+                app:tabIndicatorAnimationMode="elastic"
                 app:tabIndicatorGravity="stretch"
                 app:tabMode="scrollable"
                 app:tabPaddingBottom="5dp"
@@ -62,9 +64,7 @@
                 android:id="@+id/view_divider_app_bar"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginStart="-16dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="-16dp"
                 android:background="@color/surfaceDp24" />
 
         </com.google.android.material.appbar.AppBarLayout>
