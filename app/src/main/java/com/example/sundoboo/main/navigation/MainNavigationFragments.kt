@@ -11,7 +11,7 @@ class MainNavigationFragments : NavigationFragments() {
 
     override fun createFragmentsWithId(): Map<Int, NavigationFragment> {
         return mutableMapOf(
-            R.id.menu_item_home to NavigationFragment(homeFragment, false),
+            R.id.menu_item_home to NavigationFragment("home", homeFragment, false),
         )
     }
 

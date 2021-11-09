@@ -18,6 +18,7 @@ abstract class NavigationFragments {
 }
 
 data class NavigationFragment(
+    val tag: String,
     val fragment: Fragment,
     val shouldAddBackStack: Boolean
 )

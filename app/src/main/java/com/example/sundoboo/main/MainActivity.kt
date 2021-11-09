@@ -2,6 +2,7 @@ package com.example.sundoboo.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.example.sundoboo.R
 import com.example.sundoboo.databinding.ActivityMainBinding

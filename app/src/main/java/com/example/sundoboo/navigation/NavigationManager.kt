@@ -19,7 +19,11 @@ abstract class NavigationManager(
     }
 
     private fun replace(id: Int) {
-        navigationViewController.replace(navigationFragments.getFragmentMatchesMenuId(id))
+        val fragmentToReplace = navigationFragments.getFragmentMatchesMenuId(id)
+
+        if (!navigationViewController.alreadyExists(fragmentToReplace)) {
+            navigationViewController.replace(fragmentToReplace)
+        }
     }
 
     //첫번째 fragment로 시작한다.

@@ -1,5 +1,6 @@
 package com.example.sundoboo.home
 
+import android.annotation.SuppressLint
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.sundoboo.feed.FeedFragment

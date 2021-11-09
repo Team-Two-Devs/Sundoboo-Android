@@ -16,12 +16,17 @@ class NavigationViewController(
     }
 
     fun replace(navigationFragment: NavigationFragment) {
-        fragmentManager.beginTransaction().replace(displayView.id, navigationFragment.fragment)
+        fragmentManager.beginTransaction()
+            .replace(displayView.id, navigationFragment.fragment, navigationFragment.tag)
             .apply {
                 if (navigationFragment.shouldAddBackStack) {
                     addToBackStack(null)
                 }
             }.commitAllowingStateLoss()
+    }
+
+    fun alreadyExists(navigationFragment: NavigationFragment): Boolean {
+        return fragmentManager.findFragmentByTag(navigationFragment.tag) != null
     }
 
 }
