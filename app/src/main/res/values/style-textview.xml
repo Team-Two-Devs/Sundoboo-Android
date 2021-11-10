@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="lineHeight">24sp</item>
+        <item name="fontFamily">@font/medium</item>
+    </style>
+
     <style name="Body2" parent="@style/TextAppearance.MaterialComponents.Body2">
+        <item name="lineHeight">20sp</item>
         <item name="fontFamily">@font/regular</item>
     </style>
+
     <style name="Caption" parent="@style/TextAppearance.MaterialComponents.Caption">
+        <item name="lineHeight">16sp</item>
         <item name="fontFamily">@font/regular</item>
+    </style>
+
+    <style name="Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="lineHeight">16sp</item>
+        <item name="fontFamily">@font/medium</item>
+    </style>
+
+    <style name="RadioButtonText" parent="Caption">
+        <item name="android:textColor">@color/textMedium</item>
     </style>
 </resources>

@@ -42,11 +42,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeViewModel() {
-        viewModel.categories.observe(viewLifecycleOwner) { tabs ->
+        viewModel.categories.observe(viewLifecycleOwner) {
             TabLayoutMediator(binding.tabLayoutCategory, binding.viewPagerFeed) { tabLayout, position ->
-                tabLayout.text = tabs[position].name
+                tabLayout.text = it[position].name
             }.attach()
-            feedFragmentAdapter.updateCategories(tabs)
+            feedFragmentAdapter.updateCategories(it)
         }
     }
 
