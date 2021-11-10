@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.sundoboo.R
 import com.example.sundoboo.databinding.ActivityMainBinding
 import com.example.sundoboo.main.navigation.MainNavigationManager
-import com.example.sundoboo.main.navigation.MainNavigationFragments
+import com.example.sundoboo.main.navigation.MainFragmentsStore
 import com.example.sundoboo.navigation.NavigationManager
 import com.example.sundoboo.navigation.NavigationViewController
 
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navigationManager: NavigationManager
 
     private val navigationFragments by lazy {
-        MainNavigationFragments()
+        MainFragmentsStore()
     }
 
     private val navigationViewController by lazy {
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         navigationManager = MainNavigationManager(
             context = this,
             navigationViewController = navigationViewController,
-            navigationFragments = navigationFragments
+            fragmentsStore = navigationFragments
         )
 
         navigationManager.start(R.id.menu_item_home)

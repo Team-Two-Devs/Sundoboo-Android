@@ -5,7 +5,7 @@ import com.google.android.material.navigation.NavigationBarView
 
 abstract class NavigationManager(
     private val navigationViewController: NavigationViewController,
-    private val navigationFragments: NavigationFragments,
+    private val fragmentsStore: FragmentsStore,
     private val context: Context,
 ) {
 
@@ -19,7 +19,7 @@ abstract class NavigationManager(
     }
 
     private fun replace(id: Int) {
-        val fragmentToReplace = navigationFragments.getFragmentMatchesMenuId(id)
+        val fragmentToReplace = fragmentsStore.getFragmentMatchesMenuId(id)
 
         if (!navigationViewController.alreadyExists(fragmentToReplace)) {
             navigationViewController.replace(fragmentToReplace)

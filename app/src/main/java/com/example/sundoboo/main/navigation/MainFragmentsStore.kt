@@ -3,9 +3,9 @@ package com.example.sundoboo.main.navigation
 import com.example.sundoboo.R
 import com.example.sundoboo.home.HomeFragment
 import com.example.sundoboo.navigation.NavigationFragment
-import com.example.sundoboo.navigation.NavigationFragments
+import com.example.sundoboo.navigation.FragmentsStore
 
-class MainNavigationFragments : NavigationFragments() {
+class MainFragmentsStore : FragmentsStore() {
 
     private val homeFragment by lazy { HomeFragment.newInstance() }
 
