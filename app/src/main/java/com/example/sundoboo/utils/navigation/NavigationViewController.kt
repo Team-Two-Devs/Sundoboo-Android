@@ -1,7 +1,8 @@
-package com.example.sundoboo.navigation
+package com.example.sundoboo.utils.navigation
 
 import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.FragmentManager
+import com.example.sundoboo.utils.fragment.FragmentItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 
@@ -15,18 +16,18 @@ class NavigationViewController(
         navigation.setOnItemSelectedListener(listener)
     }
 
-    fun replace(navigationFragment: NavigationFragment) {
+    fun replace(fragmentItem: FragmentItem) {
         fragmentManager.beginTransaction()
-            .replace(displayView.id, navigationFragment.fragment, navigationFragment.tag)
+            .replace(displayView.id, fragmentItem.fragment, fragmentItem.tag)
             .apply {
-                if (navigationFragment.shouldAddBackStack) {
+                if (fragmentItem.shouldAddBackStack) {
                     addToBackStack(null)
                 }
             }.commitAllowingStateLoss()
     }
 
-    fun alreadyExists(navigationFragment: NavigationFragment): Boolean {
-        return fragmentManager.findFragmentByTag(navigationFragment.tag) != null
+    fun alreadyExists(fragmentItem: FragmentItem): Boolean {
+        return fragmentManager.findFragmentByTag(fragmentItem.tag) != null
     }
 
 }

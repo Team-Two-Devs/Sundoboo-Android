@@ -5,26 +5,31 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.sundoboo.R
 import com.example.sundoboo.databinding.ActivityMainBinding
-import com.example.sundoboo.main.navigation.MainNavigationManager
-import com.example.sundoboo.main.navigation.MainFragmentsStore
-import com.example.sundoboo.navigation.NavigationManager
-import com.example.sundoboo.navigation.NavigationViewController
+import com.example.sundoboo.home.HomeFragment
+import com.example.sundoboo.utils.fragment.FragmentItem
+import com.example.sundoboo.utils.fragment.FragmentStoreBuilder
+import com.example.sundoboo.utils.navigation.NavigationViewManager
+import com.example.sundoboo.utils.navigation.NavigationViewController
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var navigationManager: NavigationManager
-
-    private val navigationFragments by lazy {
-        MainFragmentsStore()
-    }
+    private lateinit var navigationViewManager: NavigationViewManager
 
     private val navigationViewController by lazy {
         NavigationViewController(
             displayView = binding.fragmentContainerView,
             navigation = binding.bottomNavigationView,
             fragmentManager = supportFragmentManager
+        )
+    }
+
+    private val homeFragment by lazy { HomeFragment.newInstance() }
+
+    private val fragments by lazy {
+        mutableMapOf(
+            R.id.menu_item_home to FragmentItem("home", homeFragment, false),
         )
     }
 
@@ -36,12 +41,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpBottomNavigationView() {
-        navigationManager = MainNavigationManager(
+        navigationViewManager = NavigationViewManager(
             context = this,
             navigationViewController = navigationViewController,
-            fragmentsStore = navigationFragments
+            fragmentStore = FragmentStoreBuilder<Int>().insertFragments {
+                fragments
+            }.build()
         )
 
-        navigationManager.start(R.id.menu_item_home)
+        navigationViewManager.start(R.id.menu_item_home)
     }
 }

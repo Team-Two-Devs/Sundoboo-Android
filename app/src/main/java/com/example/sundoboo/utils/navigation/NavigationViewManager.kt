@@ -1,11 +1,12 @@
-package com.example.sundoboo.navigation
+package com.example.sundoboo.utils.navigation
 
 import android.content.Context
+import com.example.sundoboo.utils.fragment.FragmentStore
 import com.google.android.material.navigation.NavigationBarView
 
-abstract class NavigationManager(
+class NavigationViewManager(
     private val navigationViewController: NavigationViewController,
-    private val fragmentsStore: FragmentsStore,
+    private val fragmentStore: FragmentStore<Int>,
     private val context: Context,
 ) {
 
@@ -19,7 +20,7 @@ abstract class NavigationManager(
     }
 
     private fun replace(id: Int) {
-        val fragmentToReplace = fragmentsStore.getFragmentMatchesMenuId(id)
+        val fragmentToReplace = fragmentStore.getFragmentMatchesMenuId(id)
 
         if (!navigationViewController.alreadyExists(fragmentToReplace)) {
             navigationViewController.replace(fragmentToReplace)
