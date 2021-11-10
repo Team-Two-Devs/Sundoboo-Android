@@ -20,7 +20,7 @@ class NavigationViewManager(
     }
 
     private fun replace(id: Int) {
-        val fragmentToReplace = fragmentStore.getFragmentMatchesMenuId(id)
+        val fragmentToReplace = fragmentStore.findFragmentByKey(id)
 
         if (!navigationViewController.alreadyExists(fragmentToReplace)) {
             navigationViewController.replace(fragmentToReplace)
