@@ -18,11 +18,11 @@ class FeedFragmentAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     }
 
     fun updateCategories(categories: List<Category>) {
-        fragmentStore.changeFragments {
+        fragmentStore.changeFragments(
             categories.mapIndexed { index, it ->
                 index to FragmentItem(it.name, FeedFragment.newInstance(it))
             }.toMap()
-        }
+        )
         notifyDataSetChanged()
     }
 }

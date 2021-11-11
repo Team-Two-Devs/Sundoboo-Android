@@ -3,8 +3,8 @@ package com.example.sundoboo.utils.fragment
 class FragmentStoreBuilder<KEY : Any> {
     private lateinit var fragments: Map<KEY, FragmentItem>
 
-    fun insertFragments(creator : () -> Map<KEY, FragmentItem>) : FragmentStoreBuilder<KEY> {
-        fragments = creator()
+    fun with(newFragments : Map<KEY, FragmentItem>) : FragmentStoreBuilder<KEY> {
+        fragments = newFragments
         return this
     }
 

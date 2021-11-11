@@ -14,8 +14,8 @@ class FragmentStore<KEY : Any>(
             ?: throw Exception("Fragment with key $key not found!")
     }
 
-    fun changeFragments(creator : () -> Map<KEY, FragmentItem>) {
-        fragments = creator()
+    fun changeFragments(newFragments : Map<KEY, FragmentItem>) {
+        fragments = newFragments
     }
 
 }
