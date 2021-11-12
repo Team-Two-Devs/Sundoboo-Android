@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.sundoboo.databinding.FragmentFeedBinding
 import com.example.sundoboo.home.model.Category
 import com.example.sundoboo.utils.autoCleared
@@ -13,11 +14,16 @@ class FeedFragment : Fragment() {
 
     private var binding by autoCleared<FragmentFeedBinding>()
 
+    private val viewModel: FeedViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFeedBinding.inflate(layoutInflater)
+        binding = FragmentFeedBinding.inflate(layoutInflater).apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = this@FeedFragment.viewModel
+        }
         return binding.root
     }
 
@@ -25,14 +31,19 @@ class FeedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setUpRecyclerView()
+
+        observeViewModel()
     }
 
     private fun setUpRecyclerView() {
         binding.recyclerViewFeeds.adapter = FeedsAdapter()
     }
-    
-    companion object {
 
+    private fun observeViewModel() {
+
+    }
+
+    companion object {
         const val KEY_CATEGORY = "KEY_CATEGORY"
 
         @JvmStatic

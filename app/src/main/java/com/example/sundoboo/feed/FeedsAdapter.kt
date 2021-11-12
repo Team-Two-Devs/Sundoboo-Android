@@ -2,6 +2,7 @@ package com.example.sundoboo.feed
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundoboo.databinding.ItemHomeFeedBinding
 
@@ -41,4 +42,10 @@ class FeedsAdapter : RecyclerView.Adapter<FeedsAdapter.FeedsViewHolder>() {
 
     }
 
+}
+
+@BindingAdapter("feeds")
+fun setFeeds(recyclerView: RecyclerView, feeds: List<Feed>?) {
+    feeds ?: return
+    (recyclerView.adapter as FeedsAdapter).replaceFeeds(feeds)
 }
