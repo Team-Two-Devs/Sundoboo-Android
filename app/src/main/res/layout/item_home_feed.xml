@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.sundoboo.feed.Feed" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_holder"
         android:layout_width="match_parent"
@@ -52,12 +59,12 @@
             android:id="@+id/text_view_show_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/label_show_all_votes"
             android:textAppearance="@style/Overline"
             android:textColor="@color/textDisable"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radio_group_vote"
-            tools:text="3개 항목 더보기" />
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_vote" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

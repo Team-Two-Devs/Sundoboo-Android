@@ -21,16 +21,25 @@ class FeedFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setUpRecyclerView()
+    }
+
+    private fun setUpRecyclerView() {
+        binding.recyclerViewFeeds.adapter = FeedsAdapter()
+    }
+    
     companion object {
 
         const val KEY_CATEGORY = "KEY_CATEGORY"
 
         @JvmStatic
-        fun newInstance(category: Category) =
-            FeedFragment().apply {
-                arguments = Bundle().apply {
-                    putSerializable(KEY_CATEGORY, category)
-                }
+        fun newInstance(category: Category) = FeedFragment().apply {
+            arguments = Bundle().apply {
+                putSerializable(KEY_CATEGORY, category)
             }
+        }
     }
 }
