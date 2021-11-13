@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.sundoboo.databinding.FragmentHomeBinding
+import com.example.sundoboo.search.SearchFeedsActivity
 import com.example.sundoboo.utils.autoCleared
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,6 +35,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setUpViewPager()
+        setUpToolbar()
 
         observeViewModel()
     }
@@ -43,9 +45,18 @@ class HomeFragment : Fragment() {
         binding.viewPagerFeed.adapter = feedFragmentAdapter
     }
 
+    private fun setUpToolbar() {
+        binding.toolbarSearch.setOnClickListener {
+            startActivity(SearchFeedsActivity.newIntent(requireContext()))
+        }
+    }
+
     private fun observeViewModel() {
         viewModel.categories.observe(viewLifecycleOwner) {
-            TabLayoutMediator(binding.tabLayoutCategory, binding.viewPagerFeed) { tabLayout, position ->
+            TabLayoutMediator(
+                binding.tabLayoutCategory,
+                binding.viewPagerFeed
+            ) { tabLayout, position ->
                 tabLayout.text = it[position].name
             }.attach()
             feedFragmentAdapter.updateCategories(it)

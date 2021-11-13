@@ -19,6 +19,7 @@
             app:elevation="0dp">
 
             <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
