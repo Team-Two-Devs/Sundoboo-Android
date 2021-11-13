@@ -45,6 +45,8 @@ dependencies {
     implementation(Dependencies.HILT_ANDROID)
     kapt(Dependencies.HILT_ANDROID_COMPILER)
 
+    implementation(Dependencies.FIREBASE_FIRESTORE)
+
     androidTestImplementation(Dependencies.EXT_JUNIT)
     androidTestImplementation(Dependencies.ESPRESSO)
 }

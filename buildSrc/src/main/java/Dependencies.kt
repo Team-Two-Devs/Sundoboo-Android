@@ -22,6 +22,12 @@ object Dependencies {
     const val HILT_ANDROID = "com.google.dagger:hilt-android:${Versions.HILT}"
     const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"
 
+    //firebase
+    const val FIREBASE_BOM = "com.google.firebase:firebase-bom:29.0.0"
+    const val FIREBASE_ANALYTICS_KTX = "com.google.firebase:firebase-analytics-ktx"
+    const val FIREBASE_FIRESTORE = "com.google.firebase:firebase-firestore-ktx"
+
+
     //junit
     const val JUNIT = "junit:junit:4.+"
     const val EXT_JUNIT = "androidx.test.ext:junit:1.1.3"

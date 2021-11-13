@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -59,6 +60,10 @@ dependencies {
 
     implementation(Dependencies.HILT_ANDROID)
     kapt (Dependencies.HILT_ANDROID_COMPILER)
+
+    implementation(platform(Dependencies.FIREBASE_BOM))
+    implementation(Dependencies.FIREBASE_ANALYTICS_KTX)
+    implementation(Dependencies.FIREBASE_FIRESTORE)
 
     testImplementation(Dependencies.JUNIT)
 
