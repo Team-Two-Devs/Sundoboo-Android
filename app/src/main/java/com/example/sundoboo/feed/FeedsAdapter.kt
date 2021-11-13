@@ -73,6 +73,10 @@ fun setVotes(radioGroup: RadioGroup, votes: List<Vote>?) {
 
         map {
             radioGroup.addView(RadioButton(context).apply {
+                layoutParams = RadioGroup.LayoutParams(
+                    RadioGroup.LayoutParams.MATCH_PARENT,
+                    RadioGroup.LayoutParams.WRAP_CONTENT
+                )
                 isChecked = it.checked
                 text = it.description
                 setTextAppearance(R.style.RadioButtonText)
