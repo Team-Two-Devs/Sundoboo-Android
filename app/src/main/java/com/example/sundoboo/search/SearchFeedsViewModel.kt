@@ -18,7 +18,7 @@ class SearchFeedsViewModel @Inject constructor() : ViewModel() {
     init {
         //fake data
         _searchHistories.value = (1..100).map {
-            SearchHistory(it.toString())
+            SearchHistory("$it$it$it$it$it$it")
         }
     }
 
