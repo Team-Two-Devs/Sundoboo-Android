@@ -10,7 +10,9 @@ import com.example.sundoboo.utils.fragment.FragmentItem
 import com.example.sundoboo.utils.fragment.FragmentStoreBuilder
 import com.example.sundoboo.utils.navigation.NavigationViewManager
 import com.example.sundoboo.utils.navigation.NavigationViewController
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private val homeFragment by lazy { HomeFragment.newInstance() }
 
     private val fragments by lazy {
-        mutableMapOf(
+        mapOf(
             R.id.menu_item_home to FragmentItem("home", homeFragment, false),
         )
     }

@@ -9,7 +9,9 @@ import androidx.fragment.app.viewModels
 import com.example.sundoboo.databinding.FragmentFeedBinding
 import com.example.sundoboo.home.model.Category
 import com.example.sundoboo.utils.autoCleared
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FeedFragment : Fragment() {
 
     private var binding by autoCleared<FragmentFeedBinding>()

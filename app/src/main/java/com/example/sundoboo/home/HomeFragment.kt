@@ -9,7 +9,9 @@ import androidx.fragment.app.viewModels
 import com.example.sundoboo.databinding.FragmentHomeBinding
 import com.example.sundoboo.utils.autoCleared
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var binding by autoCleared<FragmentHomeBinding>()
