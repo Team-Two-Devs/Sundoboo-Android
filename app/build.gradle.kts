@@ -59,6 +59,7 @@ dependencies {
     implementation(Dependencies.FRAGMENT_KTX)
 
     implementation(Dependencies.HILT_ANDROID)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt (Dependencies.HILT_ANDROID_COMPILER)
 
     implementation(platform(Dependencies.FIREBASE_BOM))

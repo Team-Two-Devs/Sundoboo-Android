@@ -28,6 +28,8 @@
             android:id="@+id/text_view_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:text="@{item.title}"
             android:textAppearance="@style/Headline6"
             android:textColor="@color/textHigh"

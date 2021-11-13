@@ -31,4 +31,7 @@
 
     <color name="colorVoteUnchecked">#C4C4C4</color>
 
+    <color name="colorIconDefault">#4DFFFFFF</color>
+    <color name="colorIconBackButton">#4DFFFFFF</color>
+
 </resources>
