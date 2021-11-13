@@ -3,6 +3,7 @@ package com.example.sundoboo.feed
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.sundoboo.feed.model.Feed
 
 class FeedViewModel : ViewModel() {
 

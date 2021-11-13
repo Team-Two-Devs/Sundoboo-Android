@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundoboo.databinding.ItemHomeFeedBinding
+import com.example.sundoboo.feed.model.Feed
 
 class FeedsAdapter : RecyclerView.Adapter<FeedsAdapter.FeedsViewHolder>() {
 
