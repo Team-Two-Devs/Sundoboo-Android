@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sundoboo.iml" filepath="$PROJECT_DIR$/.idea/modules/Sundoboo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Sundoboo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Sundoboo.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sundoboo.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Sundoboo.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Sundoboo.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Sundoboo.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Sundoboo.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Sundoboo.domain.iml" />
     </modules>
   </component>
 </project>

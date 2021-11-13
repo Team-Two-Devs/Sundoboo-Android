@@ -27,6 +27,8 @@
 
     <color name="colorDefaultBackground">#242424</color>
     <color name="colorDefaultAppbarBackground">#242424</color>
-    <color name="color_feed_search_toolbar">#383838</color>
+    <color name="colorFeedSearchToolbar">#383838</color>
+
+    <color name="colorVoteUnchecked">#C4C4C4</color>
 
 </resources>
