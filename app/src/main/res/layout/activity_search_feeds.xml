@@ -43,11 +43,11 @@
                         android:hint="@string/hint_search_feed"
                         android:imeOptions="actionSearch"
                         android:importantForAutofill="no"
+                        android:includeFontPadding="false"
                         android:inputType="text"
                         android:maxLines="1"
                         android:textAppearance="@style/Body2"
-                        android:includeFontPadding="false"
-                        android:textCursorDrawable="@drawable/background_default_cursor_edit_text"
+                        android:textCursorDrawable="@drawable/background_edit_text_default_cursor"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,7 +61,23 @@
                 android:layout_height="1dp"
                 android:background="@color/surfaceDp24"
                 app:layout_constraintTop_toBottomOf="@+id/app_bar_layout" />
+
         </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_content_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_search_histories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_search_history" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

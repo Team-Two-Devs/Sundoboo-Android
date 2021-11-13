@@ -17,12 +17,18 @@ class SearchFeedsActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_search_feeds)
 
         setUpToolbar()
+        setUpRecyclerViewSearchHistory()
     }
 
     private fun setUpToolbar() {
         binding.toolBar.setNavigationOnClickListener {
             finish()
         }
+    }
+
+    private fun setUpRecyclerViewSearchHistory() {
+        binding.recyclerViewSearchHistories.setHasFixedSize(true)
+        binding.recyclerViewSearchHistories.adapter = SearchHistoriesAdapter()
     }
 
     companion object {
