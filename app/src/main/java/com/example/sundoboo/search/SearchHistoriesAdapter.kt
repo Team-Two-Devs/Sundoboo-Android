@@ -1,12 +1,15 @@
 package com.example.sundoboo.search
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundoboo.databinding.ItemSearchHistoryBinding
 import com.example.sundoboo.search.model.SearchHistory
 
-class SearchHistoriesAdapter : RecyclerView.Adapter<SearchHistoriesAdapter.SearchHistoriesViewHolder>() {
+class SearchHistoriesAdapter :
+    RecyclerView.Adapter<SearchHistoriesAdapter.SearchHistoriesViewHolder>() {
 
     private var searchHistories: List<SearchHistory> = listOf()
 
@@ -22,6 +25,12 @@ class SearchHistoriesAdapter : RecyclerView.Adapter<SearchHistoriesAdapter.Searc
 
     override fun getItemCount() = searchHistories.size
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateAll(histories: List<SearchHistory>) {
+        searchHistories = histories
+        notifyDataSetChanged()
+    }
+
     class SearchHistoriesViewHolder(private val binding: ItemSearchHistoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -31,4 +40,10 @@ class SearchHistoriesAdapter : RecyclerView.Adapter<SearchHistoriesAdapter.Searc
 
     }
 
+}
+
+@BindingAdapter("searchHistories")
+fun setSearchHistories(recyclerView: RecyclerView, histories: List<SearchHistory>?) {
+    histories ?: return
+    (recyclerView.adapter as SearchHistoriesAdapter).updateAll(histories)
 }

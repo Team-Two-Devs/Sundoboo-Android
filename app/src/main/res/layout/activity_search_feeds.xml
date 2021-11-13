@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.sundoboo.search.SearchFeedsViewModel" />
+    </data>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/layout_holder"
         android:layout_width="match_parent"
@@ -75,6 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:searchHistories="@{viewModel.searchHistories}"
                 tools:listitem="@layout/item_search_history" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
