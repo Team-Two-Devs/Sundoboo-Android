@@ -38,7 +38,7 @@ android {
 }
 
 dependencies {
-    api(":domain")
+    api(project(":domain"))
 
     testImplementation(Dependencies.JUNIT)
 
