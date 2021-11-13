@@ -22,6 +22,6 @@
     </style>
 
     <style name="RadioButtonText" parent="Caption">
-        <item name="android:textColor">@color/textMedium</item>
+        <item name="android:textColor">@color/textDisable</item>
     </style>
 </resources>

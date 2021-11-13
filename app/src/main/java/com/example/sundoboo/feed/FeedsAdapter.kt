@@ -2,14 +2,19 @@ package com.example.sundoboo.feed
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sundoboo.R
 import com.example.sundoboo.databinding.ItemHomeFeedBinding
 import com.example.sundoboo.feed.model.Feed
+import com.example.sundoboo.vote.Vote
 
-class FeedsAdapter : RecyclerView.Adapter<FeedsAdapter.FeedsViewHolder>() {
-
-    private val feeds: MutableList<Feed> = mutableListOf()
+class FeedsAdapter : ListAdapter<Feed, FeedsAdapter.FeedsViewHolder>(FeedDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedsViewHolder {
         return FeedsViewHolder(
@@ -18,20 +23,16 @@ class FeedsAdapter : RecyclerView.Adapter<FeedsAdapter.FeedsViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: FeedsViewHolder, position: Int) {
-        holder.bind(feeds[position])
+        holder.bind(getItem(position))
     }
 
-    override fun getItemCount() = feeds.size
-
     fun updateFeeds(newFeeds: List<Feed>) {
-        feeds.addAll(newFeeds)
-        notifyDataSetChanged()
+        submitList(newFeeds)
     }
 
     fun replaceFeeds(newFeeds: List<Feed>) {
-        feeds.clear()
-        feeds.addAll(newFeeds)
-        notifyDataSetChanged()
+        submitList(null)
+        submitList(newFeeds)
     }
 
     class FeedsViewHolder(private val binding: ItemHomeFeedBinding) :
@@ -43,10 +44,41 @@ class FeedsAdapter : RecyclerView.Adapter<FeedsAdapter.FeedsViewHolder>() {
 
     }
 
+    object FeedDiffUtil : DiffUtil.ItemCallback<Feed>() {
+        override fun areItemsTheSame(oldItem: Feed, newItem: Feed): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: Feed, newItem: Feed): Boolean {
+            return oldItem == newItem
+        }
+
+    }
+
 }
 
 @BindingAdapter("feeds")
 fun setFeeds(recyclerView: RecyclerView, feeds: List<Feed>?) {
     feeds ?: return
     (recyclerView.adapter as FeedsAdapter).replaceFeeds(feeds)
+}
+
+@BindingAdapter("votes")
+fun setVotes(radioGroup: RadioGroup, votes: List<Vote>?) {
+    votes ?: return
+    val context = radioGroup.context
+
+    votes.run {
+        radioGroup.removeAllViews()
+
+        map {
+            radioGroup.addView(RadioButton(context).apply {
+                isChecked = it.checked
+                text = it.description
+                setTextAppearance(R.style.RadioButtonText)
+                buttonDrawable = ContextCompat.getDrawable(context, R.drawable.background_feed_vote)
+                setPadding(20, 20, 20, 20)
+            })
+        }
+    }
 }

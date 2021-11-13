@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.sundoboo.feed.model.Feed
+import com.example.sundoboo.vote.Vote
 
 class FeedViewModel : ViewModel() {
 
@@ -13,7 +14,7 @@ class FeedViewModel : ViewModel() {
 
     init {
         _feeds.value = (1..1000).map {
-            Feed(title = "TEST$it", description = "TEST DESCRIPTION")
+            Feed(title = "TEST$it", description = "TEST DESCRIPTION", votes = listOf(Vote(false, "TEST VOTE"), Vote(false, "TEST VOTE")))
         }
     }
 
