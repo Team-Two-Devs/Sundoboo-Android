@@ -21,13 +21,9 @@ class NavigationViewManager(
 
     private fun replace(id: Int) {
         val fragmentToReplace = fragmentStore.findFragmentByKey(id)
-
-        if (!navigationViewController.alreadyExists(fragmentToReplace)) {
-            navigationViewController.replace(fragmentToReplace)
-        }
+        navigationViewController.replace(fragmentToReplace)
     }
 
-    //첫번째 fragment로 시작한다.
     fun start(id: Int) {
         replace(id)
     }

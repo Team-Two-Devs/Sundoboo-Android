@@ -14,6 +14,7 @@ class NavigationViewController(
 
     fun setItemSelectedListener(listener: NavigationBarView.OnItemSelectedListener) {
         navigation.setOnItemSelectedListener(listener)
+        navigation.setOnItemReselectedListener { }
     }
 
     fun replace(fragmentItem: FragmentItem) {
@@ -24,10 +25,6 @@ class NavigationViewController(
                     addToBackStack(null)
                 }
             }.commitAllowingStateLoss()
-    }
-
-    fun alreadyExists(fragmentItem: FragmentItem): Boolean {
-        return fragmentManager.findFragmentByTag(fragmentItem.tag) != null
     }
 
 }
