@@ -3,6 +3,7 @@ package com.example.sundoboo.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.sundoboo.MyFeedFragment
 import com.example.sundoboo.R
 import com.example.sundoboo.databinding.ActivityMainBinding
 import com.example.sundoboo.home.HomeFragment
@@ -28,10 +29,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val homeFragment by lazy { HomeFragment.newInstance() }
+    private val myFeedFragment by lazy { MyFeedFragment.newInstance() }
 
     private val fragments by lazy {
         mapOf(
             R.id.menu_item_home to FragmentItem("home", homeFragment, false),
+            R.id.menu_item_mine to FragmentItem("myFeed", myFeedFragment, true),
         )
     }
 

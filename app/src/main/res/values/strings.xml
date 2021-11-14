@@ -3,8 +3,9 @@
     <string name="hint_search_vote">투표 검색</string>
     <string name="label_menu_item_home">홈</string>
     <string name="label_show_all_votes">모든 투표 항목 보기</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_search_feed">검색어를 입력해보세요</string>
     <string name="content_description_search_history">검색 기록</string>
+    <string name="label_my_feed">내가 등록한 투표</string>
+    <string name="label_menu_item_my_feed">내 투표</string>
+    <string name="label_add_feed">피드 작성</string>
 </resources>
