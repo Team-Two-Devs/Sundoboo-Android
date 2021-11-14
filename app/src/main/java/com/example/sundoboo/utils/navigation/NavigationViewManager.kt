@@ -8,6 +8,7 @@ class NavigationViewManager(
     private val navigationViewController: NavigationViewController,
     private val fragmentStore: FragmentStore<Int>,
     private val context: Context,
+    private val startId: Int,
 ) {
 
     private val onItemSelectedListener = NavigationBarView.OnItemSelectedListener {
@@ -17,15 +18,12 @@ class NavigationViewManager(
 
     init {
         navigationViewController.setItemSelectedListener(onItemSelectedListener)
+        replace(startId)
     }
 
     private fun replace(id: Int) {
         val fragmentToReplace = fragmentStore.findFragmentByKey(id)
         navigationViewController.replace(fragmentToReplace)
-    }
-
-    fun start(id: Int) {
-        replace(id)
     }
 
 }

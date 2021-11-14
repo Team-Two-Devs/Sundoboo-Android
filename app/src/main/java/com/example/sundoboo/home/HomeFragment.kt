@@ -7,8 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.sundoboo.databinding.FragmentHomeBinding
+import com.example.sundoboo.feed.FeedFragment
+import com.example.sundoboo.home.model.Category
 import com.example.sundoboo.search.SearchFeedsActivity
 import com.example.sundoboo.utils.autoCleared
+import com.example.sundoboo.utils.fragment.FragmentItem
+import com.example.sundoboo.utils.fragment.FragmentStore
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,6 +24,10 @@ class HomeFragment : Fragment() {
     private val viewModel by viewModels<HomeViewModel>()
 
     private lateinit var feedFragmentAdapter: FeedFragmentAdapter
+
+    private val fragmentStore: FragmentStore<Int> by lazy {
+        FragmentStore()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,7 +49,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUpViewPager() {
-        feedFragmentAdapter = FeedFragmentAdapter(this)
+        feedFragmentAdapter = FeedFragmentAdapter(fragmentStore, this)
         binding.viewPagerFeed.adapter = feedFragmentAdapter
     }
 
@@ -53,14 +61,27 @@ class HomeFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.categories.observe(viewLifecycleOwner) {
-            TabLayoutMediator(
-                binding.tabLayoutCategory,
-                binding.viewPagerFeed
-            ) { tabLayout, position ->
-                tabLayout.text = it[position].name
-            }.attach()
-            feedFragmentAdapter.updateCategories(it)
+            attachTabLayout(it)
+            updateCategories(it)
         }
+    }
+
+    private fun attachTabLayout(categories: List<Category>) {
+        TabLayoutMediator(
+            binding.tabLayoutCategory,
+            binding.viewPagerFeed
+        ) { tabLayout, position ->
+            tabLayout.text = categories[position].name
+        }.attach()
+    }
+
+    private fun updateCategories(categories: List<Category>) {
+        fragmentStore.changeFragments(
+            categories.mapIndexed { position, category ->
+                position to FragmentItem(category.name, FeedFragment.newInstance(category))
+            }.toMap()
+        )
+        feedFragmentAdapter.updateCategories()
     }
 
     companion object {

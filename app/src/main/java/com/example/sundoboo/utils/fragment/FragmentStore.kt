@@ -3,7 +3,7 @@ package com.example.sundoboo.utils.fragment
 import androidx.fragment.app.Fragment
 
 class FragmentStore<KEY : Any>(
-    private var fragments: Map<KEY, FragmentItem> = mapOf()
+    private val fragments: MutableMap<KEY, FragmentItem> = mutableMapOf()
 ) {
 
     val size: Int
@@ -14,8 +14,13 @@ class FragmentStore<KEY : Any>(
             ?: throw Exception("Fragment with key $key not found!")
     }
 
-    fun changeFragments(newFragments : Map<KEY, FragmentItem>) {
-        fragments = newFragments
+    fun changeFragments(newFragments: Map<KEY, FragmentItem>) {
+        fragments.forEach {
+            if (!newFragments.containsKey(it.key)) fragments.remove(it.key)
+        }
+        fragments.putAll(newFragments.filter {
+            !fragments.containsKey(it.key)
+        })
     }
 
 }

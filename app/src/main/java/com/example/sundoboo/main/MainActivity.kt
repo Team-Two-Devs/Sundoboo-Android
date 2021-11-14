@@ -49,9 +49,9 @@ class MainActivity : AppCompatActivity() {
         navigationViewManager = NavigationViewManager(
             context = this,
             navigationViewController = navigationViewController,
-            fragmentStore = FragmentStoreBuilder<Int>().with(fragments).build()
+            fragmentStore = FragmentStoreBuilder<Int>().with(fragments).build(),
+            startId = R.id.menu_item_home
         )
-
-        navigationViewManager.start(R.id.menu_item_home)
     }
+
 }
