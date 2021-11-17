@@ -29,9 +29,11 @@
     <color name="colorDefaultAppbarBackground">#242424</color>
     <color name="colorFeedSearchToolbar">#383838</color>
 
-    <color name="colorVoteUnchecked">#C4C4C4</color>
-
     <color name="colorIconDefault">#4DFFFFFF</color>
     <color name="colorIconBackButton">#4DFFFFFF</color>
+    <color name="color_votes_holder">#383838</color>
+
+    <color name="color_vote_unchecked">#4DFFFFFF</color>
+    <color name="color_vote_checked">@color/colorPrimary</color>
 
 </resources>

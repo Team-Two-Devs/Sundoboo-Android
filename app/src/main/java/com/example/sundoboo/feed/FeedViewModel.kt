@@ -17,7 +17,11 @@ class FeedViewModel @Inject constructor() : ViewModel() {
 
     init {
         _feeds.value = (1..1000).map {
-            Feed(title = "TEST$it", description = "TEST DESCRIPTION", votes = listOf(Vote(false, "TEST VOTE"), Vote(false, "TEST VOTE")))
+            if (it % 3 == 0) {
+                Feed(title = "TEST$it", description = "TEST DESCRIPTION", votes = listOf(Vote(true, "TEST VOTE"), Vote(false, "TEST VOTE")))
+            } else {
+                Feed(title = "TEST$it", description = "TEST DESCRIPTION", votes = listOf(Vote(false, "TEST VOTE"), Vote(false, "TEST VOTE")))
+            }
         }
     }
 

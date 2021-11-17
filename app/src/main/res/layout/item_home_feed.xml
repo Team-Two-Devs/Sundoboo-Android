@@ -52,14 +52,15 @@
             app:layout_constraintTop_toBottomOf="@+id/text_view_title"
             tools:text="TEST" />
 
-        <RadioGroup
-            android:id="@+id/radio_group_vote"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_votes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/text_view_description"
-            app:votes="@{item.votes}" />
+            app:votes="@{item.votes}"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_vote" />
 
         <TextView
             android:id="@+id/text_view_show_more"
@@ -70,7 +71,7 @@
             android:textColor="@color/textDisable"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radio_group_vote" />
+            app:layout_constraintTop_toBottomOf="@+id/recycler_view_votes" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
