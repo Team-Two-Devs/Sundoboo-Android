@@ -12,15 +12,29 @@ import javax.inject.Inject
 class FeedViewModel @Inject constructor() : ViewModel() {
 
     private val _feeds = MutableLiveData<List<Feed>>()
-    val feed : LiveData<List<Feed>>
+    val feed: LiveData<List<Feed>>
         get() = _feeds
 
     init {
         _feeds.value = (1..1000).map {
             if (it % 3 == 0) {
-                Feed(title = "TEST$it", description = "TEST DESCRIPTION", votes = listOf(Vote(true, "TEST VOTE"), Vote(false, "TEST VOTE")))
+                Feed(
+                    title = "TEST$it",
+                    description = "TEST DESCRIPTION",
+                    votes = listOf(Vote(true, "TEST VOTE"), Vote(false, "TEST VOTE"))
+                )
+            } else if (it % 5 == 0) {
+                Feed(
+                    title = "TEST$it",
+                    description = "TEST DESCRIPTION",
+                    votes = listOf(Vote(false, "TEST VOTE"), Vote(true, "TEST VOTE"), Vote(false, "TEST VOTE"))
+                )
             } else {
-                Feed(title = "TEST$it", description = "TEST DESCRIPTION", votes = listOf(Vote(false, "TEST VOTE"), Vote(false, "TEST VOTE")))
+                Feed(
+                    title = "TEST$it",
+                    description = "TEST DESCRIPTION",
+                    votes = listOf(Vote(false, "TEST VOTE"), Vote(false, "TEST VOTE"))
+                )
             }
         }
     }
