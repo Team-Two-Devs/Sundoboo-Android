@@ -25,15 +25,28 @@
     <color name="surfaceDp16">#ffffff</color>
     <color name="surfaceDp24">#ffffff </color>
 
+    <color name="gray50">#FAFAFA</color>
+    <color name="gray100">#F5F5F5</color>
+    <color name="gray200">#EEEEEE</color>
+    <color name="gray300">#E0E0E0</color>
+    <color name="gray400">#BDBDBD</color>
+    <color name="gray500">#9E9E9E</color>
+    <color name="gray600">#757575</color>
+    <color name="gray700">#616161</color>
+    <color name="gray800">#424242</color>
+    <color name="gray900">#212121</color>
+
     <color name="colorDefaultBackground">#ffffff</color>
-    <color name="colorDefaultAppbarBackground">#242424</color>
-    <color name="colorFeedSearchToolbar">#383838</color>
+    <color name="colorDefaultAppbarBackground">#FFFFFF</color>
+    <color name="colorFeedSearchToolbar">#EEEEEE</color>
 
     <color name="colorIconDefault">#000000</color>
     <color name="colorIconBackButton">#000000</color>
     <color name="color_votes_holder">#EEEEEE</color>
 
-    <color name="color_vote_unchecked">#C4C4C4</color>
-    <color name="color_vote_checked">@color/colorPrimary</color>
+    <color name="colorVoteUnchecked">#C4C4C4</color>
+    <color name="colorVoteChecked">@color/colorPrimary</color>
+
+    <color name="colorViewDivider">#EEEEEE</color>
 
 </resources>
