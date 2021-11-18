@@ -18,37 +18,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/background_layout_vote_holder"
+        android:background="@{item.checked ? @drawable/background_layout_vote_holder_checked :  @drawable/background_layout_vote_holder, default=@drawable/background_layout_vote_holder}"
         android:paddingStart="8dp"
         android:paddingTop="4dp"
         android:paddingEnd="8dp"
         android:paddingBottom="4dp">
 
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/barrier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="end"
-            app:constraint_referenced_ids="image_view_vote_unchecked,image_view_vote_checked" />
-
-        <ImageView
-            android:id="@+id/image_view_vote_unchecked"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_view_vote_check_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:src="@drawable/icon_vote_unchecked"
-            android:visibility="@{item.checked ? View.GONE : View.VISIBLE, default=visible}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/image_view_vote_checked"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:src="@drawable/icon_vote_checked"
-            android:visibility="@{item.checked ? View.VISIBLE : View.GONE, default=gone}"
+            android:src="@drawable/icon_vote_check_box"
+            android:tint="@{item.checked ? @color/colorVoteUnchecked : @color/colorVoteChecked, default=@color/colorVoteUnchecked}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -64,12 +46,25 @@
             android:paddingEnd="8dp"
             android:text="@{item.description}"
             android:textAppearance="@style/Caption"
-            android:textColor="@color/textDisable"
+            android:textColor="@{item.checked ? @color/textMedium : @color/textDisable ,default=@color/textDisable}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/barrier"
+            app:layout_constraintEnd_toStartOf="@+id/text_view_count_of_voter"
+            app:layout_constraintStart_toEndOf="@+id/image_view_vote_check_box"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Test" />
+
+        <TextView
+            android:id="@+id/text_view_count_of_voter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/holder_count_of_voter(String.valueOf(item.countOfVoter))}"
+            android:includeFontPadding="false"
+            android:textAppearance="@style/Caption"
+            android:visibility="@{item.showCount ? View.VISIBLE : View.GONE, default=gone}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
