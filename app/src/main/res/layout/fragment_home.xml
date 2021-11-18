@@ -51,7 +51,7 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:switchTextAppearance="@style/Caption"
-                app:tabIndicator="@drawable/background_feed_tab_indicator"
+                app:tabIndicator="@drawable/background_tab_indicator_home_category"
                 app:tabIndicatorAnimationMode="elastic"
                 app:tabIndicatorGravity="stretch"
                 app:tabMode="scrollable"
