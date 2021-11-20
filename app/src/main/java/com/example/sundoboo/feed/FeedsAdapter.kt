@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundoboo.databinding.ItemHomeFeedBinding
 import com.example.sundoboo.feed.model.Feed
+import com.example.sundoboo.vote.VotesAdapter
 
 class FeedsAdapter : ListAdapter<Feed, FeedsAdapter.FeedsViewHolder>(FeedDiffUtil) {
 
