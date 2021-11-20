@@ -9,19 +9,7 @@ import com.example.sundoboo.vote.Vote
 
 class VotesAdapter : RecyclerView.Adapter<VotesAdapter.VotesViewHolder>() {
 
-    //set이 부수 효과를 일으키고 있음. 메소드로 분리 필요.
     var items = listOf<Vote>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    class VotesViewHolder(private val binding: ItemVoteBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Vote) {
-            binding.item = item
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = VotesViewHolder(
         ItemVoteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -33,6 +21,13 @@ class VotesAdapter : RecyclerView.Adapter<VotesAdapter.VotesViewHolder>() {
 
     override fun getItemCount() = items.size
 
+    class VotesViewHolder(private val binding: ItemVoteBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: Vote) {
+            binding.item = item
+        }
+    }
+
 }
 
 @BindingAdapter("votes")
@@ -43,6 +38,9 @@ fun setVotes(recyclerView: RecyclerView, votes: List<Vote>?) {
             adapter = VotesAdapter()
         }
 
-        (adapter as VotesAdapter).items = votes
+        (adapter as VotesAdapter).run {
+            items = votes
+            notifyDataSetChanged()
+        }
     }
 }
