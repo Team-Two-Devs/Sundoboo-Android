@@ -3,10 +3,6 @@ package com.example.sundoboo.feed.detail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -15,6 +11,15 @@ import com.example.sundoboo.databinding.ActivityFeedDetailBinding
 import com.example.sundoboo.feed.model.FeedItem
 import dagger.hilt.android.AndroidEntryPoint
 
+/*
+    TODO 2021.11.22
+    1) 디자인 개선
+    2) Fab, BottomSheet 추가
+    3) 댓글 목록 추가
+    4) Writer 비교 추가
+    5) User 추가
+    ...
+ */
 @AndroidEntryPoint
 class FeedDetailActivity : AppCompatActivity() {
 
