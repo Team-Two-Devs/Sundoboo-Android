@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.sundoboo.feed.detail.FeedDetailViewModel" />
+    </data>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/layout_holder"
         android:layout_width="match_parent"
@@ -46,6 +53,7 @@
                     android:id="@+id/text_view_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="@{viewModel.feed.title}"
                     android:textAppearance="@style/Headline6"
                     android:textColor="@color/textHigh"
                     app:layout_constraintTop_toTopOf="parent"
@@ -55,6 +63,7 @@
                     android:id="@+id/text_view_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="@{viewModel.feed.description}"
                     android:textAppearance="@style/Body2"
                     android:textColor="@color/textMedium"
                     app:layout_constraintTop_toBottomOf="@+id/text_view_title"
@@ -64,7 +73,9 @@
                     android:id="@+id/text_view_voter_count"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:includeFontPadding="false"
+                    android:text="@{@string/holder_count_of_voter_feed_detail(String.valueOf(viewModel.feed.countOfVoter))}"
                     android:textAppearance="@style/Headline6"
                     android:textColor="@color/textDisable"
                     app:layout_constraintTop_toBottomOf="@+id/text_view_description"
@@ -74,9 +85,11 @@
                     android:id="@+id/recycler_view_votes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
+                    android:overScrollMode="never"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@+id/text_view_voter_count"
+                    app:votes="@{viewModel.feed.votes}"
                     tools:itemCount="6"
                     tools:listitem="@layout/item_vote" />
 

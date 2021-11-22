@@ -10,11 +10,14 @@ import com.example.sundoboo.databinding.ItemHomeFeedBinding
 import com.example.sundoboo.feed.model.FeedItem
 import com.example.sundoboo.vote.VotesAdapter
 
-class FeedsAdapter : ListAdapter<FeedItem, FeedsAdapter.FeedsViewHolder>(FeedDiffUtil) {
+class FeedsAdapter(private val navigator: FeedItemNavigator) :
+    ListAdapter<FeedItem, FeedsAdapter.FeedsViewHolder>(FeedDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedsViewHolder {
         return FeedsViewHolder(
-            ItemHomeFeedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemHomeFeedBinding.inflate(LayoutInflater.from(parent.context), parent, false).apply {
+                navigator = this@FeedsAdapter.navigator
+            }
         )
     }
 

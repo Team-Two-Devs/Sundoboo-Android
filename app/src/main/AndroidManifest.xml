@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".search.SearchFeedsActivity" />
+        <activity android:name=".feed.detail.FeedDetailActivity"/>
     </application>
 
 </manifest>

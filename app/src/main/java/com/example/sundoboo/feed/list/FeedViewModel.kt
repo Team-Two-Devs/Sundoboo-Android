@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class FeedViewModel @Inject constructor() : ViewModel() {
+class FeedViewModel @Inject constructor() : ViewModel(), FeedItemNavigator by HomeFeedItemNavigator() {
 
     private val _feedItems = MutableLiveData<List<FeedItem>>()
     val feedItems: LiveData<List<FeedItem>>
