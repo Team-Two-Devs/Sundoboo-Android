@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.sundoboo.databinding.FragmentMyFeedsBinding
 import com.example.sundoboo.utils.autoCleared
 
+//TODO 2021.11.22 기획이 없어 더 이상 진행할 수 없는 상태. 조금이라도 틀이 잡힌 피드 상세화면을 먼저 작업하기로 결정.
 class MyFeedsFragment : Fragment() {
 
     private var binding by autoCleared<FragmentMyFeedsBinding>()
