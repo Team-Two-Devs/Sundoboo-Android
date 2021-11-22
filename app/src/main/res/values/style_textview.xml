@@ -11,6 +11,11 @@
         <item name="fontFamily">@font/regular</item>
     </style>
 
+    <style name="Body1" parent="@style/TextAppearance.MaterialComponents.Body1">
+        <item name="lineHeight">24sp</item>
+        <item name="fontFamily">@font/regular</item>
+    </style>
+
     <style name="Caption" parent="@style/TextAppearance.MaterialComponents.Caption">
         <item name="lineHeight">16sp</item>
         <item name="fontFamily">@font/regular</item>
@@ -21,7 +26,4 @@
         <item name="fontFamily">@font/medium</item>
     </style>
 
-    <style name="RadioButtonText" parent="Caption">
-        <item name="android:textColor">@color/textDisable</item>
-    </style>
 </resources>

@@ -22,6 +22,7 @@
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/drawable/icon_add_feed.xml" value="0.34444444444444444" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/drawable/icon_back_default.xml" value="0.34444444444444444" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/drawable/icon_search_history.xml" value="0.34444444444444444" />
+        <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/drawable/icon_show_additional_menu.xml" value="0.36203703703703705" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/drawable/icon_test_unchecked.xml" value="0.34074074074074073" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/drawable/icon_vote_check_box.xml" value="0.34074074074074073" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/drawable/icon_vote_checked.xml" value="0.34074074074074073" />
@@ -29,6 +30,7 @@
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/activity_search_feeds.xml" value="0.2046875" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/fragment_feed.xml" value="0.25" />
+        <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/fragment_feed_detail.xml" value="0.33" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/fragment_my_feed.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/fragment_my_feeds.xml" value="0.2046875" />
@@ -37,6 +39,7 @@
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/item_search_history.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/item_vote.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/layout/item_vote_graph.xml" value="0.67" />
+        <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/menu/menu_feed-Detail.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/menu/menu_main.xml" value="0.2046875" />
         <entry key="..\:/Users/hkg56/AndroidStudioProjects/Sundoboo/app/src/main/res/menu/menu_my_feed.xml" value="0.36614583333333334" />
       </map>
