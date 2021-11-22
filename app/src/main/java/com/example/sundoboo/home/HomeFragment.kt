@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.sundoboo.databinding.FragmentHomeBinding
-import com.example.sundoboo.feed.FeedFragment
+import com.example.sundoboo.feed.list.FeedFragment
 import com.example.sundoboo.home.model.Category
 import com.example.sundoboo.search.SearchFeedsActivity
 import com.example.sundoboo.utils.autoCleared

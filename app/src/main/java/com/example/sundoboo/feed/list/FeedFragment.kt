@@ -1,4 +1,4 @@
-package com.example.sundoboo.feed
+package com.example.sundoboo.feed.list
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

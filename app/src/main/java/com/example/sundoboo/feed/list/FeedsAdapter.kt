@@ -1,4 +1,4 @@
-package com.example.sundoboo.feed
+package com.example.sundoboo.feed.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
