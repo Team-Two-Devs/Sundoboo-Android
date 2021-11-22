@@ -7,7 +7,7 @@
         app:showAsAction="always"/>
     <item
         android:id="@+id/menu_item_mine"
-        android:title="@string/label_menu_item_home"
+        android:title="@string/label_menu_item_my_feed"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/menu_item_setting"

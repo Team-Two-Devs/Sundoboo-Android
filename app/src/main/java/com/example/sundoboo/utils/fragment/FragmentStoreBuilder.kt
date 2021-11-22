@@ -10,7 +10,7 @@ class FragmentStoreBuilder<KEY : Any> {
 
     fun build() : FragmentStore<KEY> {
         return FragmentStore(
-            fragments = this.fragments
+            fragments = this.fragments.toMutableMap()
         )
     }
 }

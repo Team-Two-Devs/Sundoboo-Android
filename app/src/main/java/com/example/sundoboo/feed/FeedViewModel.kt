@@ -12,12 +12,44 @@ import javax.inject.Inject
 class FeedViewModel @Inject constructor() : ViewModel() {
 
     private val _feeds = MutableLiveData<List<Feed>>()
-    val feed : LiveData<List<Feed>>
+    val feed: LiveData<List<Feed>>
         get() = _feeds
 
     init {
         _feeds.value = (1..1000).map {
-            Feed(title = "TEST$it", description = "TEST DESCRIPTION", votes = listOf(Vote(false, "TEST VOTE"), Vote(false, "TEST VOTE")))
+            when {
+                it % 3 == 0 -> {
+                    Feed(
+                        title = "TEST$it",
+                        description = "TEST DESCRIPTION",
+                        votes = listOf(
+                            Vote(checked = true, description = "TEST VOTE", showCount = true, countOfVoter = it),
+                            Vote(checked = false, description = "TEST VOTE", showCount = true, countOfVoter = it / 2)
+                        )
+                    )
+                }
+                it % 5 == 0 -> {
+                    Feed(
+                        title = "TEST$it",
+                        description = "TEST DESCRIPTION",
+                        votes = listOf(
+                            Vote(checked = false, description = "TEST VOTE", showCount = true, countOfVoter = it),
+                            Vote(checked = true, description = "TEST VOTE", showCount = true, countOfVoter = it / 4),
+                            Vote(checked = false, description = "TEST VOTE", showCount = true, countOfVoter = it / 4)
+                        )
+                    )
+                }
+                else -> {
+                    Feed(
+                        title = "TEST$it",
+                        description = "TEST DESCRIPTION",
+                        votes = listOf(
+                            Vote(checked = false, description = "TEST VOTE"),
+                            Vote(checked = false, description = "TEST VOTE")
+                        )
+                    )
+                }
+            }
         }
     }
 

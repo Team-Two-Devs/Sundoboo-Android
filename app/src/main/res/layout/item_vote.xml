@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.example.sundoboo.vote.Vote" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_vote_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@{item.checked ? @drawable/background_layout_vote_holder_checked :  @drawable/background_layout_vote_holder, default=@drawable/background_layout_vote_holder}"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_view_vote_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:src="@drawable/icon_vote_check_box"
+            android:tint="@{item.checked ? @color/colorVoteUnchecked : @color/colorVoteChecked, default=@color/colorVoteUnchecked}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_votes_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@{item.description}"
+            android:textAppearance="@style/Caption"
+            android:textColor="@{item.checked ? @color/textMedium : @color/textDisable ,default=@color/textDisable}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/text_view_count_of_voter"
+            app:layout_constraintStart_toEndOf="@+id/image_view_vote_check_box"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Test" />
+
+        <TextView
+            android:id="@+id/text_view_count_of_voter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/holder_count_of_voter(String.valueOf(item.countOfVoter))}"
+            android:includeFontPadding="false"
+            android:textAppearance="@style/Caption"
+            android:visibility="@{item.showCount ? View.VISIBLE : View.GONE, default=gone}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

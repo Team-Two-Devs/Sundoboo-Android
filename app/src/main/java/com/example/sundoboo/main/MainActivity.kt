@@ -3,6 +3,7 @@ package com.example.sundoboo.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.sundoboo.myfeed.MyFeedsFragment
 import com.example.sundoboo.R
 import com.example.sundoboo.databinding.ActivityMainBinding
 import com.example.sundoboo.home.HomeFragment
@@ -28,10 +29,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val homeFragment by lazy { HomeFragment.newInstance() }
+    private val myFeedFragment by lazy { MyFeedsFragment.newInstance() }
 
     private val fragments by lazy {
         mapOf(
             R.id.menu_item_home to FragmentItem("home", homeFragment, false),
+            R.id.menu_item_mine to FragmentItem("myFeed", myFeedFragment, true),
         )
     }
 
@@ -46,9 +49,9 @@ class MainActivity : AppCompatActivity() {
         navigationViewManager = NavigationViewManager(
             context = this,
             navigationViewController = navigationViewController,
-            fragmentStore = FragmentStoreBuilder<Int>().with(fragments).build()
+            fragmentStore = FragmentStoreBuilder<Int>().with(fragments).build(),
+            startId = R.id.menu_item_home
         )
-
-        navigationViewManager.start(R.id.menu_item_home)
     }
+
 }
