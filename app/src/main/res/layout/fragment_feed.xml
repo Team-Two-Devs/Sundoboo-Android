@@ -22,7 +22,7 @@
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:paddingBottom="100dp"
-            app:feeds="@{viewModel.feed}"
+            app:feeds="@{viewModel.feedItems}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_home_feed" />
 

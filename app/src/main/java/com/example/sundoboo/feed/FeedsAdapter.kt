@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundoboo.databinding.ItemHomeFeedBinding
-import com.example.sundoboo.feed.model.Feed
+import com.example.sundoboo.feed.model.FeedItem
 import com.example.sundoboo.vote.VotesAdapter
 
-class FeedsAdapter : ListAdapter<Feed, FeedsAdapter.FeedsViewHolder>(FeedDiffUtil) {
+class FeedsAdapter : ListAdapter<FeedItem, FeedsAdapter.FeedsViewHolder>(FeedDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedsViewHolder {
         return FeedsViewHolder(
@@ -22,31 +22,31 @@ class FeedsAdapter : ListAdapter<Feed, FeedsAdapter.FeedsViewHolder>(FeedDiffUti
         holder.bind(getItem(position))
     }
 
-    fun updateFeeds(newFeeds: List<Feed>) {
-        submitList(newFeeds)
+    fun updateFeeds(newFeedItems: List<FeedItem>) {
+        submitList(newFeedItems)
     }
 
-    fun replaceFeeds(newFeeds: List<Feed>) {
+    fun replaceFeeds(newFeedItems: List<FeedItem>) {
         submitList(null)
-        submitList(newFeeds)
+        submitList(newFeedItems)
     }
 
     class FeedsViewHolder(private val binding: ItemHomeFeedBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Feed) {
+        fun bind(item: FeedItem) {
             binding.recyclerViewVotes.adapter = VotesAdapter()
             binding.item = item
         }
 
     }
 
-    object FeedDiffUtil : DiffUtil.ItemCallback<Feed>() {
-        override fun areItemsTheSame(oldItem: Feed, newItem: Feed): Boolean {
+    object FeedDiffUtil : DiffUtil.ItemCallback<FeedItem>() {
+        override fun areItemsTheSame(oldItem: FeedItem, newItem: FeedItem): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Feed, newItem: Feed): Boolean {
+        override fun areContentsTheSame(oldItem: FeedItem, newItem: FeedItem): Boolean {
             return oldItem == newItem
         }
 
@@ -55,7 +55,7 @@ class FeedsAdapter : ListAdapter<Feed, FeedsAdapter.FeedsViewHolder>(FeedDiffUti
 }
 
 @BindingAdapter("feeds")
-fun setFeeds(recyclerView: RecyclerView, feeds: List<Feed>?) {
-    feeds ?: return
-    (recyclerView.adapter as FeedsAdapter).replaceFeeds(feeds)
+fun setFeeds(recyclerView: RecyclerView, feedItems: List<FeedItem>?) {
+    feedItems ?: return
+    (recyclerView.adapter as FeedsAdapter).replaceFeeds(feedItems)
 }
