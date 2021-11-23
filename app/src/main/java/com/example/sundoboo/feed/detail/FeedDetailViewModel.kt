@@ -28,7 +28,7 @@ class FeedDetailViewModel @Inject constructor(
                 Vote(description = "중국집"),
                 Vote(description = "김밥천국"),
                 Vote(description = "국밥집"),
-                Vote(description = "편의점")
+                Vote(description = "편의점"),
             )
         )
     }

@@ -20,7 +20,7 @@
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorDefaultAppbarBackground"
+            android:background="@drawable/background_app_bar_layout_default"
             app:elevation="0dp">
 
             <androidx.appcompat.widget.Toolbar
@@ -30,80 +30,98 @@
                 app:menu="@menu/menu_feed_detail"
                 app:navigationIcon="@drawable/icon_back_default" />
 
-            <View
-                android:id="@+id/view_divider_app_bar"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorViewDivider" />
-
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/scroll_view_content_holder"
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="?attr/actionBarSize">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar_layout_collapsing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorDefaultAppbarBackground">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/text_view_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.feed.title}"
+                            android:textAppearance="@style/Headline6"
+                            android:textColor="@color/textHigh"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="TEST" />
+
+                        <TextView
+                            android:id="@+id/text_view_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.feed.description}"
+                            android:textAppearance="@style/Body2"
+                            android:textColor="@color/textMedium"
+                            app:layout_constraintTop_toBottomOf="@+id/text_view_title"
+                            tools:text="TEST" />
+
+                        <TextView
+                            android:id="@+id/text_view_voter_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:includeFontPadding="false"
+                            android:text="@{@string/holder_count_of_voter_feed_detail(String.valueOf(viewModel.feed.countOfVoter))}"
+                            android:textAppearance="@style/Headline6"
+                            android:textColor="@color/textDisable"
+                            app:layout_constraintTop_toBottomOf="@+id/text_view_description"
+                            tools:text="124명 참여 중" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_votes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:overScrollMode="never"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintTop_toBottomOf="@+id/text_view_voter_count"
+                            app:votes="@{viewModel.feed.votes}"
+                            tools:itemCount="6"
+                            tools:listitem="@layout/item_home_feed_vote" />
+
+                        <View
+                            android:id="@+id/view_divider_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="-16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="-16dp"
+                            android:background="@color/colorViewDivider"
+                            app:layout_constraintTop_toBottomOf="@+id/recycler_view_votes" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="16dp">
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
-                <TextView
-                    android:id="@+id/text_view_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{viewModel.feed.title}"
-                    android:textAppearance="@style/Headline6"
-                    android:textColor="@color/textHigh"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="TEST" />
-
-                <TextView
-                    android:id="@+id/text_view_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{viewModel.feed.description}"
-                    android:textAppearance="@style/Body2"
-                    android:textColor="@color/textMedium"
-                    app:layout_constraintTop_toBottomOf="@+id/text_view_title"
-                    tools:text="TEST" />
-
-                <TextView
-                    android:id="@+id/text_view_voter_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:includeFontPadding="false"
-                    android:text="@{@string/holder_count_of_voter_feed_detail(String.valueOf(viewModel.feed.countOfVoter))}"
-                    android:textAppearance="@style/Headline6"
-                    android:textColor="@color/textDisable"
-                    app:layout_constraintTop_toBottomOf="@+id/text_view_description"
-                    tools:text="124명 참여 중" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view_votes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:overScrollMode="never"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toBottomOf="@+id/text_view_voter_count"
-                    app:votes="@{viewModel.feed.votes}"
-                    tools:itemCount="6"
-                    tools:listitem="@layout/item_home_feed_vote" />
-
-                <View
-                    android:id="@+id/view_divider_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorViewDivider"
-                    app:layout_constraintTop_toBottomOf="@+id/recycler_view_votes" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.core.widget.NestedScrollView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
