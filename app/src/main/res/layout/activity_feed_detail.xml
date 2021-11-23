@@ -91,7 +91,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/text_view_voter_count"
                     app:votes="@{viewModel.feed.votes}"
                     tools:itemCount="6"
-                    tools:listitem="@layout/item_vote" />
+                    tools:listitem="@layout/item_home_feed_vote" />
 
                 <View
                     android:id="@+id/view_divider_recycler_view"

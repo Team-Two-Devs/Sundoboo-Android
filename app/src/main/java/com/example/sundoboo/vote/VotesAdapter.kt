@@ -4,15 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sundoboo.databinding.ItemVoteBinding
-import com.example.sundoboo.vote.Vote
+import com.example.sundoboo.databinding.ItemHomeFeedVoteBinding
 
 class VotesAdapter : RecyclerView.Adapter<VotesAdapter.VotesViewHolder>() {
 
     var items = listOf<Vote>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = VotesViewHolder(
-        ItemVoteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        ItemHomeFeedVoteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
     override fun onBindViewHolder(holder: VotesViewHolder, position: Int) {
@@ -21,7 +20,7 @@ class VotesAdapter : RecyclerView.Adapter<VotesAdapter.VotesViewHolder>() {
 
     override fun getItemCount() = items.size
 
-    class VotesViewHolder(private val binding: ItemVoteBinding) :
+    class VotesViewHolder(private val binding: ItemHomeFeedVoteBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Vote) {
             binding.item = item

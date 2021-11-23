@@ -63,7 +63,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_view_description"
             app:votes="@{item.votes}"
             tools:itemCount="2"
-            tools:listitem="@layout/item_vote" />
+            tools:listitem="@layout/item_home_feed_vote" />
 
         <TextView
             android:id="@+id/text_view_show_more"
