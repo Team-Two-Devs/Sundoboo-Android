@@ -6,6 +6,7 @@ import com.example.sundoboo.utils.fragment.FragmentItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 
+//TODO (2021.11.24) NavigationView와 Fragment 관리를 분리하기
 class NavigationViewController(
     private val displayView: FragmentContainerView,
     private val navigation: BottomNavigationView,
