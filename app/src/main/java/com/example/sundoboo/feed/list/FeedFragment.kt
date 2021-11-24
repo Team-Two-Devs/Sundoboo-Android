@@ -13,6 +13,8 @@ import com.example.sundoboo.utils.EventObserver
 import com.example.sundoboo.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
+const val KEY_CATEGORY = "KEY_CATEGORY"
+
 @AndroidEntryPoint
 class FeedFragment : Fragment() {
 
@@ -50,8 +52,6 @@ class FeedFragment : Fragment() {
     }
 
     companion object {
-        const val KEY_CATEGORY = "KEY_CATEGORY"
-
         @JvmStatic
         fun newInstance(category: Category) = FeedFragment().apply {
             arguments = Bundle().apply {

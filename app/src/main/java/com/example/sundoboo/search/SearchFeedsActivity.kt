@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.sundoboo.R
 import com.example.sundoboo.databinding.ActivitySearchFeedsBinding
-import com.example.sundoboo.utils.showKeyboard
 import com.example.sundoboo.utils.showKeyboardAndFocus
 import dagger.hilt.android.AndroidEntryPoint
 
