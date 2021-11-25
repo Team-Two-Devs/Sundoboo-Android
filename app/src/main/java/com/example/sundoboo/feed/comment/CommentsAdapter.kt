@@ -2,6 +2,7 @@ package com.example.sundoboo.feed.comment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -20,11 +21,21 @@ class CommentsAdapter : ListAdapter<Comment, CommentsAdapter.CommentsViewHolder>
 
     class CommentsViewHolder(private val binding: ItemCommentBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(item: Comment) {
             binding.item = item
         }
+
     }
 
+}
+
+@BindingAdapter("comments")
+fun setComments(recyclerView: RecyclerView, comments: List<Comment>?) {
+    recyclerView.adapter ?: return
+    comments ?: return
+
+    (recyclerView.adapter as CommentsAdapter).submitList(comments)
 }
 
 object CommentsDiffUtil : DiffUtil.ItemCallback<Comment>() {

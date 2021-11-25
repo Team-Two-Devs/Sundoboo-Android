@@ -1,7 +1,12 @@
 package com.example.sundoboo.feed.comment.model
 
+import com.example.sundoboo.user.model.Writer
+
 data class Comment(
     val id: String,
     val description: String,
-    //TODO Writer 프로퍼티 추가
-)
+    val date: String,
+    val writer: Writer,
+) {
+    fun getWriterName() = writer.getName()
+}
