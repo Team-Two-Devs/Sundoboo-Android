@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.sundoboo.R
 import com.example.sundoboo.databinding.ActivityFeedDetailBinding
-import com.example.sundoboo.feed.comment.model.CommentsFragment
+import com.example.sundoboo.feed.comment.CommentsFragment
 import com.example.sundoboo.feed.model.FeedItem
 import dagger.hilt.android.AndroidEntryPoint
 

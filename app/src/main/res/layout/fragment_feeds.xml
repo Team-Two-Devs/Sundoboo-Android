@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.sundoboo.feed.list.FeedViewModel" />
+            type="com.example.sundoboo.feed.list.FeedsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
