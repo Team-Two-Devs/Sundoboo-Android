@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.sundoboo.feed.list.FeedItemNavigator
 import com.example.sundoboo.feed.model.Feed
+import com.example.sundoboo.user.model.User
+import com.example.sundoboo.user.model.Writer
 import com.example.sundoboo.vote.Vote
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -29,7 +31,8 @@ class FeedDetailViewModel @Inject constructor(
                 Vote(description = "김밥천국"),
                 Vote(description = "국밥집"),
                 Vote(description = "편의점"),
-            )
+            ),
+            writer = Writer(User.Anonymous)
         )
     }
 
