@@ -12,4 +12,5 @@
     <string name="label_feed_detail_show_menu">메뉴 보기</string>
     <string name="holder_count_of_voter_feed_detail">%1$s명 참여중</string>
     <string name="label_show_all_comments">전체 보기</string>
+    <string name="label_comment_count">댓글 %1$s개</string>
 </resources>

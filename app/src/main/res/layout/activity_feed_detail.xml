@@ -111,6 +111,18 @@
                             android:background="@color/colorViewDivider"
                             app:layout_constraintTop_toBottomOf="@+id/recycler_view_votes" />
 
+                        <TextView
+                            android:id="@+id/text_view_count_of_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/textMedium"
+                            android:text="@{@string/label_comment_count(String.valueOf(viewModel.feed.countOfComment))}"
+                            android:textAppearance="@style/Headline6"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view_divider_recycler_view" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </com.google.android.material.appbar.CollapsingToolbarLayout>
